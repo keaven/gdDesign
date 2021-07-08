@@ -273,7 +273,7 @@ nBinomial <- function(p1, p2, alpha = 0.025, beta = 0.1, delta0 = 0, ratio = 1, 
   }
   else {
     OR <- exp(-delta0)
-    if (min(abs(p1 / (1 - p1) / p2 * (1 - p2) * OR) - 1) < 1e-07) {
+    if (min(abs(p1 / (1 - p1) / p2 * (1 - p2) * OR - 1)) < 1e-07) {
       stop("p1/(1-p1)/p2*(1-p2) may not equal exp(delta0) when scale=\"OR\"")
     }
     a <- OR - 1
